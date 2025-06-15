@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kdo jsem - Avelgi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
+
+        .hover-invert:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .page-transition {
+            animation: scaleInFromBlack 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes scaleInFromBlack {
+            0% {
+                opacity: 0;
+                transform: scale(0.92);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .page-exit {
+            animation: scaleOutToBlack 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes scaleOutToBlack {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.92);
+            }
+        }
+
+        .page-container {
+            will-change: opacity, transform;
+            backface-visibility: hidden;
+            transform: translate3d(0, 0, 0);
+        }
+
+        .nav-button {
+            will-change: transform, opacity;
+            backface-visibility: hidden;
+            transform: translate3d(0, 0, 0);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nav-button:active {
+            transform: translate3d(0, 0, 0) scale(0.96);
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <main class="min-h-screen bg-black flex items-center px-8 page-container">
+        <div class="container mx-auto max-w-7xl">
+            <div class="space-y-6 sm:space-y-12 text-left max-w-5xl page-transition">
+                <div class="mb-6 sm:mb-10">
+                    <button onClick="handleNavigation('/')(event)" class="border border-white text-white px-6 py-3 text-base font-normal tracking-wide hover-invert nav-button transition-all duration-300 inline-block">
+                        Zpět
+                    </button>
+                </div>
+
+                <div class="space-y-4 sm:space-y-8">
+                    <h3 class="text-white font-semibold text-2xl md:text-3xl lg:text-4xl tracking-wide">Kdo jsem</h3>
+                    <p class="text-white text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl font-normal">
+                        Jsem kreativní duše s vášní pro design a inovace. Mou specializací je vytváření unikátních vizuálních řešení, která spojují estetiku s funkcionalitou.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function handleNavigation(href) {
+            return function(e) {
+                e.preventDefault();
+                const pageContainer = document.querySelector('.page-container');
+                if (pageContainer) {
+                    pageContainer.classList.add('page-exit');
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 800);
+                }
+            }
+        }
+    </script>
+</body>
+</html> 
