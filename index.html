@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avelgi</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: black;
+            color: white;
+        }
+        .container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        .content {
+            max-width: 64rem;
+            margin: 0 auto;
+        }
+        .space-y-6 > * + * {
+            margin-top: 1.5rem;
+        }
+        .space-y-12 > * + * {
+            margin-top: 3rem;
+        }
+        .space-y-4 > * + * {
+            margin-top: 1rem;
+        }
+        .space-y-8 > * + * {
+            margin-top: 2rem;
+        }
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.025em;
+            margin: 0;
+        }
+        p {
+            font-size: 1rem;
+            line-height: 1.5;
+            max-width: 56rem;
+            font-weight: normal;
+        }
+        .button {
+            border: 1px solid white;
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: normal;
+            letter-spacing: 0.025em;
+            transition: all 0.3s;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 120px;
+            cursor: pointer;
+            background: transparent;
+        }
+        .button:hover {
+            background: white;
+            color: black;
+        }
+        .mobile-buttons {
+            display: none;
+        }
+        .desktop-buttons {
+            display: flex;
+            gap: 2rem;
+        }
+        @media (max-width: 640px) {
+            .mobile-buttons {
+                display: block;
+            }
+            .desktop-buttons {
+                display: none;
+            }
+            .button {
+                padding: 1rem;
+                font-size: 0.875rem;
+                min-width: auto;
+            }
+            .button-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+            h3 {
+                font-size: 1.25rem;
+            }
+            p {
+                font-size: 0.875rem;
+            }
+        }
+        .page-container {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .page-exit {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container page-container">
+        <div class="content">
+            <div class="space-y-6 sm:space-y-12">
+                <div class="space-y-4 sm:space-y-8">
+                    <h3>Avelgi</h3>
+                    <p>Opportunity, like beauty, is in the eye of the beholder. Often times we can see opportunity when we get the terms we desire and you too can see the beauty in the capital we provide.</p>
+                </div>
+                
+                <div class="mobile-buttons">
+                    <div class="button-grid">
+                        <button onclick="handleNavigation('/kdo-jsem')" class="button">Kdo jsem</button>
+                        <button onclick="handleNavigation('/co-delam')" class="button">Co dělám</button>
+                    </div>
+                    <div class="button-grid" style="margin-top: 1.5rem;">
+                        <button onclick="handleNavigation('/kontakt')" class="button">Kontakt</button>
+                        <div></div>
+                    </div>
+                </div>
+                
+                <div class="desktop-buttons">
+                    <button onclick="handleNavigation('/kdo-jsem')" class="button">Kdo jsem</button>
+                    <button onclick="handleNavigation('/co-delam')" class="button">Co dělám</button>
+                    <button onclick="handleNavigation('/kontakt')" class="button">Kontakt</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleNavigation(href) {
+            return function(e) {
+                e.preventDefault();
+                const pageContainer = document.querySelector('.page-container');
+                pageContainer.classList.add('page-exit');
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 800);
+            }
+        }
+    </script>
+</body>
+</html> 
