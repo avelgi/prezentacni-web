@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avelgi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        .hover-invert:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .page-transition {
+            animation: scaleInFromBlack 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes scaleInFromBlack {
+            0% {
+                opacity: 0;
+                transform: scale(0.92);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .page-exit {
+            animation: scaleOutToBlack 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes scaleOutToBlack {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.92);
+            }
+        }
+
+        .page-container {
+            will-change: opacity, transform;
+            backface-visibility: hidden;
+            transform: translate3d(0, 0, 0);
+        }
+
+        .nav-button {
+            will-change: transform, opacity;
+            backface-visibility: hidden;
+            transform: translate3d(0, 0, 0);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nav-button:active {
+            transform: translate3d(0, 0, 0) scale(0.96);
+            opacity: 0.7;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .back-button:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hlavní stránka -->
+    <div id="home" class="page active">
+        <main class="min-h-screen bg-black flex items-center px-8 page-container">
+            <div class="container mx-auto max-w-7xl">
+                <div class="space-y-6 sm:space-y-12 text-left max-w-5xl page-transition">
+                    <!-- Tagline -->
+                    <div class="space-y-4 sm:space-y-8">
+                        <h3 class="text-white font-semibold text-2xl md:text-3xl lg:text-4xl tracking-wide">Avelgi</h3>
+                        <p class="text-white text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl font-normal">
+                            Opportunity, like beauty, is in the eye of the beholder. Often times we can see opportunity when we get
+                            the terms we desire and you too can see the beauty in the capital we provide.
+                        </p>
+                    </div>
+
+                    <!-- Mobile Layout: 2+1 grid -->
+                    <div class="sm:hidden">
+                        <div class="space-y-6">
+                            <div class="grid grid-cols-2 gap-4">
+                                <button onclick="navigateTo('kdo-jsem')" class="border border-white text-white px-4 py-4 text-sm font-normal tracking-wide hover-invert nav-button transition-all duration-300 text-center flex items-center justify-center h-12">
+                                    Kdo jsem
+                                </button>
+                                <button onclick="navigateTo('co-delam')" class="border border-white text-white px-4 py-4 text-sm font-normal tracking-wide hover-invert nav-button transition-all duration-300 text-center flex items-center justify-center h-12">
+                                    Co dělám
+                                </button>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <button onclick="navigateTo('kontakt')" class="border border-white text-white px-4 py-4 text-sm font-normal tracking-wide hover-invert nav-button transition-all duration-300 text-center flex items-center justify-center h-12">
+                                    Kontakt
+                                </button>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Desktop Layout: horizontal -->
+                    <div class="hidden sm:flex flex-col sm:flex-row gap-8">
+                        <button onclick="navigateTo('kdo-jsem')" class="border border-white text-white px-8 py-4 text-base font-normal tracking-wide hover-invert nav-button transition-all duration-300 text-center flex items-center justify-center min-w-[120px]">
+                            Kdo jsem
+                        </button>
+                        <button onclick="navigateTo('co-delam')" class="border border-white text-white px-8 py-4 text-base font-normal tracking-wide hover-invert nav-button transition-all duration-300 text-center flex items-center justify-center min-w-[120px]">
+                            Co dělám
+                        </button>
+                        <button onclick="navigateTo('kontakt')" class="border border-white text-white px-8 py-4 text-base font-normal tracking-wide hover-invert nav-button transition-all duration-300 text-center flex items-center justify-center min-w-[120px]">
+                            Kontakt
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Kdo jsem stránka -->
+    <div id="kdo-jsem" class="page">
+        <a href="#" onclick="navigateTo('home')" class="back-button">← Zpět</a>
+        <main class="min-h-screen bg-black flex items-center px-8 page-container">
+            <div class="container mx-auto max-w-7xl">
+                <div class="space-y-6 sm:space-y-12 text-left max-w-5xl page-transition">
+                    <div class="space-y-4 sm:space-y-8">
+                        <h3 class="text-white font-semibold text-2xl md:text-3xl lg:text-4xl tracking-wide">Kdo jsem</h3>
+                        <p class="text-white text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl font-normal">
+                            Jsem profesionál v oblasti financí a investic s více než 10 lety zkušeností. 
+                            Specializuji se na poskytování komplexních finančních řešení pro jednotlivce i firmy.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Co dělám stránka -->
+    <div id="co-delam" class="page">
+        <a href="#" onclick="navigateTo('home')" class="back-button">← Zpět</a>
+        <main class="min-h-screen bg-black flex items-center px-8 page-container">
+            <div class="container mx-auto max-w-7xl">
+                <div class="space-y-6 sm:space-y-12 text-left max-w-5xl page-transition">
+                    <div class="space-y-4 sm:space-y-8">
+                        <h3 class="text-white font-semibold text-2xl md:text-3xl lg:text-4xl tracking-wide">Co dělám</h3>
+                        <p class="text-white text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl font-normal">
+                            Poskytuji konzultace v oblasti investic, finančního plánování a správy majetku. 
+                            Pomáhám klientům dosáhnout jejich finančních cílů pomocí individuálních strategií.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Kontakt stránka -->
+    <div id="kontakt" class="page">
+        <a href="#" onclick="navigateTo('home')" class="back-button">← Zpět</a>
+        <main class="min-h-screen bg-black flex items-center px-8 page-container">
+            <div class="container mx-auto max-w-7xl">
+                <div class="space-y-6 sm:space-y-12 text-left max-w-5xl page-transition">
+                    <div class="space-y-4 sm:space-y-8">
+                        <h3 class="text-white font-semibold text-2xl md:text-3xl lg:text-4xl tracking-wide">Kontakt</h3>
+                        <p class="text-white text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl font-normal">
+                            Email: info@avelgi.com<br>
+                            Telefon: +420 123 456 789<br>
+                            Adresa: Václavské náměstí 1, Praha 1
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function navigateTo(pageId) {
+            const currentPage = document.querySelector('.page.active');
+            const targetPage = document.getElementById(pageId);
+            
+            if (currentPage && targetPage) {
+                currentPage.classList.add('page-exit');
+                
+                setTimeout(() => {
+                    currentPage.classList.remove('active');
+                    currentPage.classList.remove('page-exit');
+                    targetPage.classList.add('active');
+                    targetPage.classList.add('page-transition');
+                    
+                    // Reset animation
+                    setTimeout(() => {
+                        targetPage.classList.remove('page-transition');
+                    }, 1200);
+                }, 800);
+            }
+        }
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', function(event) {
+            const pageId = event.state ? event.state.page : 'home';
+            navigateTo(pageId);
+        });
+
+        // Update URL when navigating
+        function updateURL(pageId) {
+            const url = pageId === 'home' ? '/' : `/${pageId}`;
+            window.history.pushState({ page: pageId }, '', url);
+        }
+    </script>
+</body>
+</html> 
