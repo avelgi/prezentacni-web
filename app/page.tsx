@@ -32,8 +32,9 @@ export default function Home() {
             <h3 className="text-white font-semibold text-2xl md:text-3xl lg:text-4xl tracking-wide">Avelgi</h3>
 
             <p className="text-white text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl font-normal">
-              Opportunity, like beauty, is in the eye of the beholder. Often times we can see opportunity when we get
-              the terms we desire and you too can see the beauty in the capital we provide.
+              Vítejte na místě, kde se byznysová strategie snoubí s výkonným web developmentem. Jsem webový stratég a
+              developer. Díky kombinaci obchodních znalostí, datové analytiky a moderních technologií stavím digitální
+              řešení, která nejen oslní designem, ale především generují měřitelné výsledky.
             </p>
           </div>
 

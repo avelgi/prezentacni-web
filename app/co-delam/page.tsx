@@ -41,10 +41,36 @@ export default function CoDelam() {
           <div className="space-y-4 sm:space-y-8">
             <h3 className="text-white font-semibold text-2xl md:text-3xl lg:text-4xl tracking-wide">Co dělám</h3>
 
-            <p className="text-white text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl font-normal">
-              Your content text goes here. This is a simple text block that follows the same styling as the landing
-              page, with a heading and descriptive text below it.
-            </p>
+            <div className="space-y-6 sm:space-y-8">
+              <p className="text-white text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl font-normal">
+                Kombinuji hluboké byznysové vhledy s nejmodernějšími webovými technologiemi, abych pro vás zajistil:
+              </p>
+
+              <p className="text-white text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl font-normal">
+                <strong>Prezentační weby na míru</strong> – silný storytelling, jasné call‑to‑action a intuitivní
+                uživatelská cesta vedoucí k maximální konverzi.
+              </p>
+
+              <p className="text-white text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl font-normal">
+                <strong>Tvorbu a optimalizaci Shopify e‑shopů</strong> – rychlé, škálovatelné řešení s plynulým nákupním
+                procesem a zvýšenou průměrnou hodnotou košíku.
+              </p>
+
+              <p className="text-white text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl font-normal">
+                <strong>Strategický design</strong> – analytika cílové skupiny, vytváření wireframů a vizuálních
+                konceptů optimalizovaných pro prodejní výsledky.
+              </p>
+
+              <p className="text-white text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl font-normal">
+                <strong>UX audity a vylepšení</strong> – zrychlení načítání, zlepšení použitelnosti a přístupnosti pro
+                vyšší spokojenost návštěvníků.
+              </p>
+
+              <p className="text-white text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl font-normal">
+                <strong>Průběžné konzultace a datová analytika</strong> – sledování klíčových metrik a doporučení pro
+                další rozvoj vašeho online byznysu.
+              </p>
+            </div>
           </div>
         </div>
       </div>

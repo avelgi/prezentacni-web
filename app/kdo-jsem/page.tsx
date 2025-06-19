@@ -42,8 +42,10 @@ export default function KdoJsem() {
             <h3 className="text-white font-semibold text-2xl md:text-3xl lg:text-4xl tracking-wide">Kdo jsem</h3>
 
             <p className="text-white text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl font-normal">
-              Your content text goes here. This is a simple text block that follows the same styling as the landing
-              page, with a heading and descriptive text below it.
+              Nejsem "jen" web developer – jsem váš partner pro digitální růst. Během své praxe jsem pochopil, jak
+              propojovat obchodní cíle s technickými možnostmi. Pracoval jsem na řadě prezentačních projektů i Shopify
+              e‑shopech a každému z nich přinesl výsledky. Mým cílem je přinést do každého projektu strategii, která
+              oslovuje a prodává.
             </p>
           </div>
         </div>

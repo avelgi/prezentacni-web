@@ -43,8 +43,11 @@ export default function Kontakt() {
             <h3 className="text-white font-semibold text-2xl md:text-3xl lg:text-4xl tracking-wide">Kontakt</h3>
 
             <p className="text-white text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl font-normal">
-              Your content text goes here. This is a simple text block that follows the same styling as the landing
-              page, with a heading and descriptive text below it.
+              Právě teď se vydejte na cestu k vítězství v digitálním světě.
+            </p>
+
+            <p className="text-white text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl font-normal">
+              Kontaktujte mě na emailu níže.
             </p>
           </div>
 
