@@ -3,11 +3,12 @@
 @tailwind utilities;
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
 }
 
 .font-playfair {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .text-gold {
