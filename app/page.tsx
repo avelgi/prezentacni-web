@@ -2,6 +2,7 @@
 
 import type React from "react"
 import { useRouter } from "next/navigation"
+import Image from "next/image"
 
 export default function Home() {
   const router = useRouter()
@@ -27,9 +28,18 @@ export default function Home() {
     <main className="min-h-screen bg-black flex items-center px-8 page-container">
       <div className="container mx-auto max-w-7xl">
         <div className="space-y-6 sm:space-y-12 text-left max-w-5xl page-transition">
-          {/* Tagline */}
+          {/* Logo */}
           <div className="space-y-4 sm:space-y-8">
-            <h3 className="text-white font-semibold text-2xl md:text-3xl lg:text-4xl tracking-wide">Avelgi</h3>
+            <div className="w-full max-w-md">
+              <Image
+                src="/avelgi-logo.png"
+                alt="Avelgi Web Development"
+                width={800}
+                height={200}
+                className="w-full h-auto"
+                priority
+              />
+            </div>
 
             <p className="text-white text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl font-normal">
               Vítejte na místě, kde se byznysová strategie snoubí s výkonným web developmentem. Jsem webový stratég a
