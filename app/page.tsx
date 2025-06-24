@@ -10,7 +10,6 @@ export default function Home() {
   const [isLoaded, setIsLoaded] = useState(true)
   const [isMobile, setIsMobile] = useState(false)
   const [isTransitioning, setIsTransitioning] = useState(false)
-  const audioContextRef = useRef<AudioContext | null>(null)
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -24,17 +23,6 @@ export default function Home() {
 
     checkMobile()
     window.addEventListener("resize", checkMobile)
-
-    // Initialize Web Audio API for desktop only
-    const initAudio = () => {
-      if (!isMobile) {
-        try {
-          audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)()
-        } catch (e) {
-          console.log("Web Audio API not supported")
-        }
-      }
-    }
 
     // Intersection Observer for scroll-triggered animations (desktop only)
     let observer: IntersectionObserver | null = null
@@ -60,56 +48,15 @@ export default function Home() {
       }, 100)
     }
 
-    initAudio()
-
     return () => {
       observer?.disconnect()
       window.removeEventListener("resize", checkMobile)
     }
   }, [isMobile])
 
-  const playHoverSound = () => {
-    if (!isMobile && audioContextRef.current) {
-      const oscillator = audioContextRef.current.createOscillator()
-      const gainNode = audioContextRef.current.createGain()
-
-      oscillator.connect(gainNode)
-      gainNode.connect(audioContextRef.current.destination)
-
-      oscillator.frequency.setValueAtTime(800, audioContextRef.current.currentTime)
-      oscillator.frequency.exponentialRampToValueAtTime(400, audioContextRef.current.currentTime + 0.1)
-
-      gainNode.gain.setValueAtTime(0, audioContextRef.current.currentTime)
-      gainNode.gain.linearRampToValueAtTime(0.01, audioContextRef.current.currentTime + 0.01)
-      gainNode.gain.exponentialRampToValueAtTime(0.001, audioContextRef.current.currentTime + 0.1)
-
-      oscillator.start(audioContextRef.current.currentTime)
-      oscillator.stop(audioContextRef.current.currentTime + 0.1)
-    }
-  }
-
   const handleNavigation = (href: string) => {
     return (e: React.MouseEvent) => {
       e.preventDefault()
-
-      // Play click sound (desktop only)
-      if (!isMobile && audioContextRef.current) {
-        const oscillator = audioContextRef.current.createOscillator()
-        const gainNode = audioContextRef.current.createGain()
-
-        oscillator.connect(gainNode)
-        gainNode.connect(audioContextRef.current.destination)
-
-        oscillator.frequency.setValueAtTime(600, audioContextRef.current.currentTime)
-        oscillator.frequency.exponentialRampToValueAtTime(200, audioContextRef.current.currentTime + 0.2)
-
-        gainNode.gain.setValueAtTime(0, audioContextRef.current.currentTime)
-        gainNode.gain.linearRampToValueAtTime(0.02, audioContextRef.current.currentTime + 0.01)
-        gainNode.gain.exponentialRampToValueAtTime(0.001, audioContextRef.current.currentTime + 0.2)
-
-        oscillator.start(audioContextRef.current.currentTime)
-        oscillator.stop(audioContextRef.current.currentTime + 0.2)
-      }
 
       // Set transitioning state to show sparks
       setIsTransitioning(true)
@@ -179,7 +126,7 @@ export default function Home() {
             {/* Logo with Fire-like Glow Effect */}
             <div className="space-y-4 sm:space-y-8 scroll-animate">
               <div className="w-full max-w-md logo-container">
-                <div className={`logo-wrapper ${!isMobile ? "magnetic-element" : ""}`}>
+                <div className={`logo-wrapper ${!isMobile ? "magnetic-element page-load-tilt" : "page-load-tilt"}`}>
                   <Image
                     src="/avelgi-logo-nobg.png"
                     alt="Avelgi Web Development"
@@ -242,7 +189,6 @@ export default function Home() {
                 <div className="grid grid-cols-2 gap-4">
                   <button
                     onClick={handleNavigation("/kdo-jsem")}
-                    onMouseEnter={playHoverSound}
                     className="optimized-button mobile-button border border-white text-white px-4 py-4 text-sm font-normal tracking-wide transition-all duration-300 text-center flex items-center justify-center h-12 relative overflow-hidden"
                   >
                     <span className="button-text relative z-10">Kdo jsem</span>
@@ -252,7 +198,6 @@ export default function Home() {
                   </button>
                   <button
                     onClick={handleNavigation("/co-delam")}
-                    onMouseEnter={playHoverSound}
                     className="optimized-button mobile-button border border-white text-white px-4 py-4 text-sm font-normal tracking-wide transition-all duration-300 text-center flex items-center justify-center h-12 relative overflow-hidden"
                   >
                     <span className="button-text relative z-10">Co dělám</span>
@@ -265,7 +210,6 @@ export default function Home() {
                 <div className="grid grid-cols-2 gap-4">
                   <button
                     onClick={handleNavigation("/kontakt")}
-                    onMouseEnter={playHoverSound}
                     className="optimized-button mobile-button border border-white text-white px-4 py-4 text-sm font-normal tracking-wide transition-all duration-300 text-center flex items-center justify-center h-12 relative overflow-hidden"
                   >
                     <span className="button-text relative z-10">Kontakt</span>
@@ -282,7 +226,6 @@ export default function Home() {
             <div className="hidden sm:flex flex-col sm:flex-row gap-8 buttons-container scroll-animate">
               <button
                 onClick={handleNavigation("/kdo-jsem")}
-                onMouseEnter={playHoverSound}
                 className="optimized-button magnetic-button border border-white text-white px-8 py-4 text-base font-normal tracking-wide transition-all duration-300 text-center flex items-center justify-center min-w-[120px] relative overflow-hidden"
               >
                 <span className="button-text relative z-10">Kdo jsem</span>
@@ -292,7 +235,6 @@ export default function Home() {
               </button>
               <button
                 onClick={handleNavigation("/co-delam")}
-                onMouseEnter={playHoverSound}
                 className="optimized-button magnetic-button border border-white text-white px-8 py-4 text-base font-normal tracking-wide transition-all duration-300 text-center flex items-center justify-center min-w-[120px] relative overflow-hidden"
               >
                 <span className="button-text relative z-10">Co dělám</span>
@@ -302,7 +244,6 @@ export default function Home() {
               </button>
               <button
                 onClick={handleNavigation("/kontakt")}
-                onMouseEnter={playHoverSound}
                 className="optimized-button magnetic-button border border-white text-white px-8 py-4 text-base font-normal tracking-wide transition-all duration-300 text-center flex items-center justify-center min-w-[120px] relative overflow-hidden"
               >
                 <span className="button-text relative z-10">Kontakt</span>

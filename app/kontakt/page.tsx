@@ -2,13 +2,14 @@
 
 import type React from "react"
 import { useRouter } from "next/navigation"
-import { Instagram } from "lucide-react"
 import { useEffect, useState } from "react"
 
 export default function Kontakt() {
   const router = useRouter()
   const [isMobile, setIsMobile] = useState(false)
   const [isTransitioning, setIsTransitioning] = useState(false)
+  const [emailCopied, setEmailCopied] = useState(false)
+  const [emailHovered, setEmailHovered] = useState(false)
 
   useEffect(() => {
     // Detect mobile devices
@@ -45,6 +46,36 @@ export default function Kontakt() {
         }, 800) // Match the animation duration
       }
     }
+  }
+
+  const handleEmailClick = async (e: React.MouseEvent) => {
+    e.preventDefault()
+
+    // Copy to clipboard
+    try {
+      await navigator.clipboard.writeText("avelgi@avelgi.com")
+      setEmailCopied(true)
+
+      // Reset after 2 seconds
+      setTimeout(() => {
+        setEmailCopied(false)
+      }, 2000)
+    } catch (err) {
+      // Fallback for older browsers
+      const textArea = document.createElement("textarea")
+      textArea.value = "avelgi@avelgi.com"
+      document.body.appendChild(textArea)
+      textArea.select()
+      document.execCommand("copy")
+      document.body.removeChild(textArea)
+      setEmailCopied(true)
+      setTimeout(() => {
+        setEmailCopied(false)
+      }, 2000)
+    }
+
+    // Also open email client
+    window.location.href = "mailto:avelgi@avelgi.com"
   }
 
   return (
@@ -87,26 +118,55 @@ export default function Kontakt() {
               </p>
             </div>
 
-            {/* Email */}
-            <div>
-              <a
-                href="mailto:avelgi@avelgi.com"
-                className="text-white text-base md:text-lg font-bold hover:text-white/70 transition-colors underline email-highlight"
+            {/* Advanced Email Button */}
+            <div className="relative py-4">
+              <button
+                onClick={handleEmailClick}
+                onMouseEnter={() => setEmailHovered(true)}
+                onMouseLeave={() => setEmailHovered(false)}
+                className="advanced-email-button group relative inline-block"
               >
-                avelgi@avelgi.com
-              </a>
-            </div>
+                <span className="email-text">avelgi@avelgi.com</span>
 
-            {/* Instagram */}
-            <div>
-              <a
-                href="https://www.instagram.com/avelgi/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block text-white hover:text-white/70 transition-colors duration-300"
-              >
-                <Instagram size={24} className="stroke-current stroke-2" />
-              </a>
+                {/* Advanced Background Effects */}
+                <div className="email-bg-layer-1"></div>
+                <div className="email-bg-layer-2"></div>
+                <div className="email-bg-layer-3"></div>
+
+                {/* Particle System */}
+                <div className="email-particles">
+                  {[...Array(12)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="email-particle"
+                      style={{ "--delay": `${i * 0.1}s` } as React.CSSProperties}
+                    />
+                  ))}
+                </div>
+
+                {/* Scanning Line Effect */}
+                <div className="email-scan-line"></div>
+
+                {/* Holographic Border */}
+                <div className="email-holo-border"></div>
+
+                {/* Success State */}
+                {emailCopied && (
+                  <div className="email-success-overlay">
+                    <span className="success-text">Zkopírováno!</span>
+                    <div className="success-particles">
+                      {[...Array(8)].map((_, i) => (
+                        <div key={i} className="success-particle" />
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </button>
+
+              {/* Tooltip */}
+              <div className={`email-tooltip ${emailHovered ? "visible" : ""}`}>
+                Kliknutím zkopírujete a otevřete email
+              </div>
             </div>
           </div>
         </div>
