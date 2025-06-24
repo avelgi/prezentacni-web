@@ -91,7 +91,7 @@ export default function Kontakt() {
             <div>
               <a
                 href="mailto:avelgi@avelgi.com"
-                className="text-white text-base md:text-lg font-bold hover:text-white/70 transition-colors underline"
+                className="text-white text-base md:text-lg font-bold hover:text-white/70 transition-colors underline email-highlight"
               >
                 avelgi@avelgi.com
               </a>
