@@ -31,9 +31,11 @@ export default function CoDelam() {
           <div className="mb-6 sm:mb-10">
             <button
               onClick={handleNavigation("/")}
-              className="border border-white text-white px-6 py-3 text-base font-normal tracking-wide hover-invert nav-button transition-all duration-300 inline-block"
+              className="advanced-button border border-white text-white px-6 py-3 text-base font-normal tracking-wide transition-all duration-300 inline-block relative overflow-hidden"
             >
-              Zpět
+              <span className="button-text relative z-10">Zpět</span>
+              <div className="button-bg"></div>
+              <div className="button-particles"></div>
             </button>
           </div>
 
