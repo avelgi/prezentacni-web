@@ -9,174 +9,6 @@ body {
   cursor: auto; /* Use normal cursor */
 }
 
-/* Fire Sparks Transition - Realistic fire sparks with slow movement */
-.fire-sparks-transition {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 10001;
-  background: transparent;
-}
-
-.fire-sparks-transition::before {
-  content: "";
-  position: absolute;
-  width: 2px;
-  height: 8px;
-  background: linear-gradient(to top, #ff0000, #ff4500, #ff6600);
-  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-  /* 30 realistic fire sparks with slow, natural movement */
-  box-shadow:
-    15vw 10vh 0 0 #ff0000,
-    25vw 15vh 0 0 #ff4500,
-    35vw 8vh 0 0 #ff6600,
-    45vw 12vh 0 0 #ff0000,
-    55vw 18vh 0 0 #ff4500,
-    65vw 5vh 0 0 #ff6600,
-    75vw 14vh 0 0 #ff0000,
-    85vw 9vh 0 0 #ff4500,
-    95vw 16vh 0 0 #ff6600,
-    5vw 20vh 0 0 #ff0000,
-    12vw 35vh 0 0 #ff4500,
-    22vw 42vh 0 0 #ff0000,
-    32vw 38vh 0 0 #ff6600,
-    42vw 45vh 0 0 #ff4500,
-    52vw 32vh 0 0 #ff0000,
-    62vw 48vh 0 0 #ff6600,
-    72vw 35vh 0 0 #ff4500,
-    82vw 41vh 0 0 #ff0000,
-    92vw 37vh 0 0 #ff6600,
-    8vw 44vh 0 0 #ff4500,
-    18vw 39vh 0 0 #ff0000,
-    28vw 46vh 0 0 #ff6600,
-    38vw 33vh 0 0 #ff4500,
-    48vw 47vh 0 0 #ff0000,
-    58vw 34vh 0 0 #ff6600,
-    14vw 65vh 0 0 #ff0000,
-    24vw 72vh 0 0 #ff4500,
-    34vw 68vh 0 0 #ff6600,
-    44vw 75vh 0 0 #ff0000,
-    54vw 62vh 0 0 #ff4500;
-  animation: fireSparkFloat1 6s ease-in-out infinite;
-  filter: drop-shadow(0 0 3px rgba(255, 69, 0, 0.8)) drop-shadow(0 0 6px rgba(255, 0, 0, 0.6));
-}
-
-.fire-sparks-transition::after {
-  content: "";
-  position: absolute;
-  width: 1px;
-  height: 6px;
-  background: linear-gradient(to top, #ff4500, #ff6600, #ffaa00);
-  border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
-  /* 30 more realistic fire sparks with different timing */
-  box-shadow:
-    17vw 22vh 0 0 #ff4500,
-    27vw 28vh 0 0 #ff0000,
-    37vw 24vh 0 0 #ff6600,
-    47vw 31vh 0 0 #ff4500,
-    57vw 19vh 0 0 #ff0000,
-    67vw 26vh 0 0 #ff6600,
-    77vw 23vh 0 0 #ff4500,
-    87vw 29vh 0 0 #ff0000,
-    97vw 21vh 0 0 #ff6600,
-    7vw 27vh 0 0 #ff4500,
-    13vw 52vh 0 0 #ff0000,
-    23vw 58vh 0 0 #ff6600,
-    33vw 54vh 0 0 #ff4500,
-    43vw 61vh 0 0 #ff0000,
-    53vw 49vh 0 0 #ff6600,
-    63vw 56vh 0 0 #ff4500,
-    73vw 53vh 0 0 #ff0000,
-    83vw 59vh 0 0 #ff6600,
-    93vw 51vh 0 0 #ff4500,
-    3vw 57vh 0 0 #ff0000,
-    11vw 43vh 0 0 #ff6600,
-    21vw 49vh 0 0 #ff4500,
-    31vw 46vh 0 0 #ff0000,
-    41vw 52vh 0 0 #ff6600,
-    51vw 44vh 0 0 #ff4500,
-    61vw 50vh 0 0 #ff0000,
-    71vw 47vh 0 0 #ff6600,
-    81vw 53vh 0 0 #ff4500,
-    91vw 45vh 0 0 #ff0000,
-    1vw 51vh 0 0 #ff6600;
-  animation: fireSparkFloat2 6s ease-in-out infinite 1s;
-  filter: drop-shadow(0 0 2px rgba(255, 102, 0, 0.8)) drop-shadow(0 0 4px rgba(255, 170, 0, 0.6));
-}
-
-@keyframes fireSparkFloat1 {
-  0% {
-    opacity: 0;
-    transform: scale(0) translateY(0) translateX(0) rotate(0deg);
-  }
-  5% {
-    opacity: 0.3;
-    transform: scale(0.5) translateY(-2px) translateX(-1px) rotate(5deg);
-  }
-  15% {
-    opacity: 0.8;
-    transform: scale(1) translateY(-8px) translateX(-3px) rotate(15deg);
-  }
-  30% {
-    opacity: 1;
-    transform: scale(1.1) translateY(-18px) translateX(2px) rotate(25deg);
-  }
-  50% {
-    opacity: 0.9;
-    transform: scale(1) translateY(-32px) translateX(-5px) rotate(35deg);
-  }
-  70% {
-    opacity: 0.6;
-    transform: scale(0.8) translateY(-48px) translateX(3px) rotate(45deg);
-  }
-  85% {
-    opacity: 0.3;
-    transform: scale(0.5) translateY(-65px) translateX(-7px) rotate(55deg);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.2) translateY(-80px) translateX(4px) rotate(65deg);
-  }
-}
-
-@keyframes fireSparkFloat2 {
-  0% {
-    opacity: 0;
-    transform: scale(0) translateY(0) translateX(0) rotate(0deg);
-  }
-  8% {
-    opacity: 0.4;
-    transform: scale(0.6) translateY(-3px) translateX(2px) rotate(-8deg);
-  }
-  20% {
-    opacity: 0.9;
-    transform: scale(1) translateY(-12px) translateX(-4px) rotate(-18deg);
-  }
-  35% {
-    opacity: 1;
-    transform: scale(1.1) translateY(-24px) translateX(3px) rotate(-28deg);
-  }
-  55% {
-    opacity: 0.8;
-    transform: scale(0.9) translateY(-40px) translateX(-6px) rotate(-38deg);
-  }
-  75% {
-    opacity: 0.5;
-    transform: scale(0.7) translateY(-58px) translateX(5px) rotate(-48deg);
-  }
-  90% {
-    opacity: 0.2;
-    transform: scale(0.4) translateY(-75px) translateX(-8px) rotate(-58deg);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.1) translateY(-90px) translateX(6px) rotate(-68deg);
-  }
-}
-
 /* Dynamic Gradient Mesh - Desktop only */
 .gradient-mesh {
   position: absolute;
@@ -750,9 +582,10 @@ body {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
-  transition: all 0.2s ease-out;
+  transition: all 0.3s ease-out;
   transform: translateZ(0); /* Force hardware acceleration */
   will-change: transform;
+  overflow: hidden;
 }
 
 .button-bg-optimized {
@@ -762,7 +595,7 @@ body {
   width: 100%;
   height: 100%;
   background: linear-gradient(45deg, #ff0000, #ff3333);
-  transition: left 0.2s ease-out;
+  transition: left 0.4s ease-out;
   z-index: 1;
   will-change: left;
 }
@@ -772,7 +605,9 @@ body {
 }
 
 .button-text {
-  transition: color 0.2s ease;
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -926,6 +761,13 @@ body {
   .gradient-mesh,
   .logo-particles {
     display: none;
+  }
+
+  /* Stable logo glow for mobile - now with animation */
+  .subtle-fire-glow {
+    filter: drop-shadow(0 0 8px rgba(255, 69, 0, 0.6)) drop-shadow(0 0 16px rgba(255, 140, 0, 0.4))
+      drop-shadow(0 0 24px rgba(255, 0, 0, 0.3));
+    /* Remove this line: animation: none; */
   }
 
   /* Reduce animation complexity */
