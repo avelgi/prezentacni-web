@@ -20,8 +20,8 @@ body {
 }
 
 .hover-invert:hover {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #ff0000;
+  color: #ffffff;
 }
 
 /* Page entrance animation - scale up from small */

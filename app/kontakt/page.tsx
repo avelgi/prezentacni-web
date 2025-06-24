@@ -54,10 +54,10 @@ export default function Kontakt() {
           {/* Email */}
           <div>
             <a
-              href="mailto:kry@stof.cz"
+              href="mailto:avelgi@avelgi.com"
               className="text-white text-base md:text-lg font-bold hover:text-white/70 transition-colors underline"
             >
-              kry@stof.cz
+              avelgi@avelgi.com
             </a>
           </div>
 
