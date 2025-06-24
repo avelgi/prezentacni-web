@@ -49,9 +49,8 @@ export default function Kontakt() {
   }
 
   const handleEmailClick = async (e: React.MouseEvent) => {
-    e.preventDefault()
-
-    // Copy to clipboard
+    // This function now only handles copying to the clipboard.
+    // The default mailto action is handled by the <a> tag.
     try {
       await navigator.clipboard.writeText("avelgi@avelgi.com")
       setEmailCopied(true)
@@ -73,9 +72,6 @@ export default function Kontakt() {
         setEmailCopied(false)
       }, 2000)
     }
-
-    // Also open email client
-    window.location.href = "mailto:avelgi@avelgi.com"
   }
 
   return (
@@ -119,53 +115,56 @@ export default function Kontakt() {
             </div>
 
             {/* Advanced Email Button */}
-            <div className="relative py-4">
-              <button
-                onClick={handleEmailClick}
-                onMouseEnter={() => setEmailHovered(true)}
-                onMouseLeave={() => setEmailHovered(false)}
-                className="advanced-email-button group relative inline-block"
-              >
-                <span className="email-text">avelgi@avelgi.com</span>
+            <div className="py-4">
+              <div className="relative inline-block">
+                <a
+                  href="mailto:avelgi@avelgi.com"
+                  onClick={handleEmailClick}
+                  onMouseEnter={() => setEmailHovered(true)}
+                  onMouseLeave={() => setEmailHovered(false)}
+                  className="advanced-email-button group relative inline-block"
+                >
+                  <span className="email-text">avelgi@avelgi.com</span>
 
-                {/* Advanced Background Effects */}
-                <div className="email-bg-layer-1"></div>
-                <div className="email-bg-layer-2"></div>
-                <div className="email-bg-layer-3"></div>
+                  {/* Advanced Background Effects */}
+                  <div className="email-bg-layer-1"></div>
+                  <div className="email-bg-layer-2"></div>
+                  <div className="email-bg-layer-3"></div>
 
-                {/* Particle System */}
-                <div className="email-particles">
-                  {[...Array(12)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="email-particle"
-                      style={{ "--delay": `${i * 0.1}s` } as React.CSSProperties}
-                    />
-                  ))}
-                </div>
-
-                {/* Scanning Line Effect */}
-                <div className="email-scan-line"></div>
-
-                {/* Holographic Border */}
-                <div className="email-holo-border"></div>
-
-                {/* Success State */}
-                {emailCopied && (
-                  <div className="email-success-overlay">
-                    <span className="success-text">Zkopírováno!</span>
-                    <div className="success-particles">
-                      {[...Array(8)].map((_, i) => (
-                        <div key={i} className="success-particle" />
-                      ))}
-                    </div>
+                  {/* Particle System */}
+                  <div className="email-particles">
+                    {[...Array(12)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="email-particle"
+                        style={{ "--delay": `${i * 0.1}s` } as React.CSSProperties}
+                      />
+                    ))}
                   </div>
-                )}
-              </button>
 
-              {/* Tooltip */}
-              <div className={`email-tooltip ${emailHovered ? "visible" : ""}`}>
-                Kliknutím zkopírujete a otevřete email
+                  {/* Scanning Line Effect */}
+                  <div className="email-scan-line"></div>
+
+                  {/* Holographic Border */}
+                  <div className="email-holo-border"></div>
+
+                  {/* Success State */}
+                  {emailCopied && (
+                    <div className="email-success-overlay">
+                      <span className="success-text">Zkopírováno!</span>
+                      <div className="success-particles">
+                        {[...Array(8)].map((_, i) => (
+                          <div key={i} className="success-particle" />
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </a>
+
+                {/* Tooltip */}
+                <div className={`email-tooltip ${emailHovered ? "visible" : ""}`}>
+                  Kliknutím zkopírujete a otevřete email
+                </div>
               </div>
             </div>
           </div>
