@@ -1107,7 +1107,9 @@ body {
 /* ===== ADVANCED EMAIL BUTTON SYSTEM ===== */
 .advanced-email-button {
   position: relative;
-  padding: 1rem 2rem;
+  /* Mobile styles (default - matches Kdo Jsem mobile button: h-12, px-4) */
+  height: 3rem; /* 48px, same as h-12 */
+  padding: 0 1rem; /* Horizontal padding like px-4. Vertical padding handled by flex + height. */
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
@@ -1116,6 +1118,24 @@ body {
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   transform-style: preserve-3d;
   perspective: 1000px;
+
+  /* Added for consistent height and centering */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box; /* Ensures padding & border are part of height */
+}
+
+/* Desktop styles (matches Kdo Jsem desktop button: py-4, px-8, text-base leading to approx 3.5rem height) */
+@media (min-width: 640px) {
+  /* sm breakpoint */
+  .advanced-email-button {
+    height: auto; /* Allow padding to define height */
+    /* Adjusted vertical padding to make total height ~3.5rem with 1.125rem font.
+       (1rem padding - (difference in line-height / 2))
+       0.90625rem = 14.5px. Horizontal padding 2rem = 32px. */
+    padding: 0.90625rem 2rem;
+  }
 }
 
 .email-text {
