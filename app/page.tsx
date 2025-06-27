@@ -150,9 +150,10 @@ export default function Home() {
                 {isMobile ? (
                   // Simple text for mobile
                   <p className="text-white text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl font-normal">
-                    Vítejte na místě, kde se byznysová strategie snoubí s výkonným web developmentem. Jsem webový
-                    stratég a developer. Díky kombinaci obchodních znalostí, datové analytiky a moderních technologií
-                    stavím digitální řešení, která nejen oslní designem, ale především generují měřitelné výsledky.
+                    Vítejte na místě, kde se byznysová strategie snoubí s&nbsp;výkonným web developmentem. Jsem webový
+                    stratég a&nbsp;developer. Díky kombinaci obchodních znalostí, datové analytiky a&nbsp;moderních
+                    technologií stavím digitální řešení, která nejen oslní designem, ale především generují měřitelné
+                    výsledky.
                   </p>
                 ) : (
                   // Staggered text for desktop
@@ -188,19 +189,19 @@ export default function Home() {
                 {/* First row - 2 buttons */}
                 <div className="grid grid-cols-2 gap-4">
                   <button
-                    onClick={handleNavigation("/kdo-jsem")}
+                    onClick={handleNavigation("/proc-my")}
                     className="optimized-button mobile-button border border-white text-white px-4 py-4 text-sm font-normal tracking-wide transition-all duration-300 text-center flex items-center justify-center h-12 relative overflow-hidden"
                   >
-                    <span className="button-text relative z-10">Kdo jsem</span>
+                    <span className="button-text relative z-10">Proč my?</span>
                     <div className="button-bg-optimized"></div>
                     <div className="button-particles"></div>
                     <div className="button-ripple"></div>
                   </button>
                   <button
-                    onClick={handleNavigation("/co-delam")}
+                    onClick={handleNavigation("/nase-sluzby")}
                     className="optimized-button mobile-button border border-white text-white px-4 py-4 text-sm font-normal tracking-wide transition-all duration-300 text-center flex items-center justify-center h-12 relative overflow-hidden"
                   >
-                    <span className="button-text relative z-10">Co dělám</span>
+                    <span className="button-text relative z-10">Naše služby</span>
                     <div className="button-bg-optimized"></div>
                     <div className="button-particles"></div>
                     <div className="button-ripple"></div>
@@ -225,19 +226,19 @@ export default function Home() {
             {/* Desktop Layout: horizontal */}
             <div className="hidden sm:flex flex-col sm:flex-row gap-8 buttons-container scroll-animate">
               <button
-                onClick={handleNavigation("/kdo-jsem")}
+                onClick={handleNavigation("/proc-my")}
                 className="optimized-button magnetic-button border border-white text-white px-8 py-4 text-base font-normal tracking-wide transition-all duration-300 text-center flex items-center justify-center min-w-[120px] relative overflow-hidden"
               >
-                <span className="button-text relative z-10">Kdo jsem</span>
+                <span className="button-text relative z-10">Proč my?</span>
                 <div className="button-bg-optimized"></div>
                 <div className="button-particles"></div>
                 <div className="button-ripple"></div>
               </button>
               <button
-                onClick={handleNavigation("/co-delam")}
+                onClick={handleNavigation("/nase-sluzby")}
                 className="optimized-button magnetic-button border border-white text-white px-8 py-4 text-base font-normal tracking-wide transition-all duration-300 text-center flex items-center justify-center min-w-[120px] relative overflow-hidden"
               >
-                <span className="button-text relative z-10">Co dělám</span>
+                <span className="button-text relative z-10">Naše služby</span>
                 <div className="button-bg-optimized"></div>
                 <div className="button-particles"></div>
                 <div className="button-ripple"></div>

@@ -102,13 +102,12 @@ export default function Kontakt() {
                 <span className="text-word">Právě</span> <span className="text-word">teď</span>{" "}
                 <span className="text-word">se</span> <span className="text-word">vydejte</span>{" "}
                 <span className="text-word">na</span> <span className="text-word">cestu</span>{" "}
-                <span className="text-word">k</span> <span className="text-word">vítězství</span>{" "}
-                <span className="text-word">v</span> <span className="text-word">digitálním</span>{" "}
+                <span className="text-word">k&nbsp;vítězství</span> <span className="text-word">v&nbsp;digitálním</span>{" "}
                 <span className="text-word">světě.</span>
               </p>
 
               <p className="text-white text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl font-normal text-stagger">
-                <span className="text-word">Kontaktujte</span> <span className="text-word">mě</span>{" "}
+                <span className="text-word">Kontaktujte</span> <span className="text-word">nás</span>{" "}
                 <span className="text-word">na</span> <span className="text-word">emailu</span>{" "}
                 <span className="text-word">níže.</span>
               </p>
@@ -163,7 +162,7 @@ export default function Kontakt() {
 
                 {/* Tooltip */}
                 <div className={`email-tooltip ${emailHovered ? "visible" : ""}`}>
-                  Kliknutím zkopírujete a otevřete email
+                  Kliknutím zkopírujete a&nbsp;otevřete email
                 </div>
               </div>
             </div>
