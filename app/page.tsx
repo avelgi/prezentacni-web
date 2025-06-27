@@ -150,33 +150,50 @@ export default function Home() {
                 {isMobile ? (
                   // Simple text for mobile
                   <p className="text-white text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl font-normal">
-                    Vítejte na místě, kde se byznysová strategie snoubí s&nbsp;výkonným web developmentem. Jsem webový
-                    stratég a&nbsp;developer. Díky kombinaci obchodních znalostí, datové analytiky a&nbsp;moderních
-                    technologií stavím digitální řešení, která nejen oslní designem, ale především generují měřitelné
-                    výsledky.
+                    Chcete web, který zaujme, vydělává a&nbsp;nezruinuje vás? V&nbsp;Avelgi Web Development vám
+                    vytvoříme moderní, rychlý a&nbsp;designový web šitý na míru, který perfektně funguje na mobilu
+                    i&nbsp;počítači – a&nbsp;to jednoduše, rychle a&nbsp;za cenu, jakou u&nbsp;konkurence nenajdete.
+                    Získejte profesionální online vizitku, která vám přivede nové zákazníky, zvýší tržby a&nbsp;posune
+                    vaše podnikání na novou úroveň. Férový přístup, tah na branku a&nbsp;žádné zbytečné poplatky – jen
+                    perfektní weby, které mluví za vše.
                   </p>
                 ) : (
                   // Staggered text for desktop
                   <p className="text-white text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl font-normal text-stagger">
-                    <span className="text-word">Vítejte</span> <span className="text-word">na</span>{" "}
-                    <span className="text-word">místě,</span> <span className="text-word">kde</span>{" "}
-                    <span className="text-word">se</span> <span className="text-word">byznysová</span>{" "}
-                    <span className="text-word">strategie</span> <span className="text-word">snoubí</span>{" "}
-                    <span className="text-word">s</span> <span className="text-word">výkonným</span>{" "}
-                    <span className="text-word">web</span> <span className="text-word">developmentem.</span>{" "}
-                    <span className="text-word">Jsem</span> <span className="text-word">webový</span>{" "}
-                    <span className="text-word">stratég</span> <span className="text-word">a</span>{" "}
-                    <span className="text-word">developer.</span> <span className="text-word">Díky</span>{" "}
-                    <span className="text-word">kombinaci</span> <span className="text-word">obchodních</span>{" "}
-                    <span className="text-word">znalostí,</span> <span className="text-word">datové</span>{" "}
-                    <span className="text-word">analytiky</span> <span className="text-word">a</span>{" "}
-                    <span className="text-word">moderních</span> <span className="text-word">technologií</span>{" "}
-                    <span className="text-word">stavím</span> <span className="text-word">digitální</span>{" "}
-                    <span className="text-word">řešení,</span> <span className="text-word">která</span>{" "}
-                    <span className="text-word">nejen</span> <span className="text-word">oslní</span>{" "}
-                    <span className="text-word">designem,</span> <span className="text-word">ale</span>{" "}
-                    <span className="text-word">především</span> <span className="text-word">generují</span>{" "}
-                    <span className="text-word">měřitelné</span> <span className="text-word">výsledky.</span>
+                    <span className="text-word">Chcete</span> <span className="text-word">web,</span>{" "}
+                    <span className="text-word">který</span> <span className="text-word">zaujme,</span>{" "}
+                    <span className="text-word">vydělává</span> <span className="text-word">a&nbsp;nezruinuje</span>{" "}
+                    <span className="text-word">vás?</span> <span className="text-word">V&nbsp;Avelgi</span>{" "}
+                    <span className="text-word">Web</span> <span className="text-word">Development</span>{" "}
+                    <span className="text-word">vám</span> <span className="text-word">vytvoříme</span>{" "}
+                    <span className="text-word">moderní,</span> <span className="text-word">rychlý</span>{" "}
+                    <span className="text-word">a&nbsp;designový</span> <span className="text-word">web</span>{" "}
+                    <span className="text-word">šitý</span> <span className="text-word">na</span>{" "}
+                    <span className="text-word">míru,</span> <span className="text-word">který</span>{" "}
+                    <span className="text-word">perfektně</span> <span className="text-word">funguje</span>{" "}
+                    <span className="text-word">na</span> <span className="text-word">mobilu</span>{" "}
+                    <span className="text-word">i&nbsp;počítači</span> <span className="text-word">–</span>{" "}
+                    <span className="text-word">a&nbsp;to</span> <span className="text-word">jednoduše,</span>{" "}
+                    <span className="text-word">rychle</span> <span className="text-word">a&nbsp;za</span>{" "}
+                    <span className="text-word">cenu,</span> <span className="text-word">jakou</span>{" "}
+                    <span className="text-word">u&nbsp;konkurence</span> <span className="text-word">nenajdete.</span>{" "}
+                    <span className="text-word">Získejte</span> <span className="text-word">profesionální</span>{" "}
+                    <span className="text-word">online</span> <span className="text-word">vizitku,</span>{" "}
+                    <span className="text-word">která</span> <span className="text-word">vám</span>{" "}
+                    <span className="text-word">přivede</span> <span className="text-word">nové</span>{" "}
+                    <span className="text-word">zákazníky,</span> <span className="text-word">zvýší</span>{" "}
+                    <span className="text-word">tržby</span> <span className="text-word">a&nbsp;posune</span>{" "}
+                    <span className="text-word">vaše</span> <span className="text-word">podnikání</span>{" "}
+                    <span className="text-word">na</span> <span className="text-word">novou</span>{" "}
+                    <span className="text-word">úroveň.</span> <span className="text-word">Férový</span>{" "}
+                    <span className="text-word">přístup,</span> <span className="text-word">tah</span>{" "}
+                    <span className="text-word">na</span> <span className="text-word">branku</span>{" "}
+                    <span className="text-word">a&nbsp;žádné</span> <span className="text-word">zbytečné</span>{" "}
+                    <span className="text-word">poplatky</span> <span className="text-word">–</span>{" "}
+                    <span className="text-word">jen</span> <span className="text-word">perfektní</span>{" "}
+                    <span className="text-word">weby,</span> <span className="text-word">které</span>{" "}
+                    <span className="text-word">mluví</span> <span className="text-word">za</span>{" "}
+                    <span className="text-word">vše.</span>
                   </p>
                 )}
               </div>
