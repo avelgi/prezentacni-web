@@ -120,7 +120,7 @@ export default function Home() {
         </div>
       </div>
 
-      <main ref={containerRef} className="min-h-screen bg-black flex items-center px-8 page-container relative z-10">
+      <main ref={containerRef} className="min-h-dvh bg-black flex items-center px-8 page-container relative z-10">
         <div className="container mx-auto max-w-7xl">
           <div className={`space-y-6 sm:space-y-12 text-left max-w-5xl page-transition ${isLoaded ? "loaded" : ""}`}>
             {/* Logo with Fire-like Glow Effect */}

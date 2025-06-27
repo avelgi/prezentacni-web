@@ -131,7 +131,7 @@ export default function NaseSluzby() {
                         {category.services.map((service) => (
                           <Card
                             key={service.name}
-                            className="bg-black/20 border border-white/10 rounded-lg shadow-lg hover:border-red-500/50 hover:shadow-red-500/10 transition-all duration-300 flex flex-col"
+                            className="bg-black/20 border border-white/10 rounded-lg shadow-lg transition-all duration-300 flex flex-col"
                           >
                             <CardHeader>
                               <div className="flex justify-between items-start">
@@ -139,7 +139,7 @@ export default function NaseSluzby() {
                                 <a
                                   href="mailto:avelgi@avelgi.com"
                                   title="Poptat tuto službu"
-                                  className="text-red-500 hover:text-red-400 transition-all duration-300 transform hover:scale-125 flex-shrink-0"
+                                  className="text-red-500 hover:text-red-400 transition-all duration-300 transform hover:scale-125 flex-shrink-0 p-2 -m-2 relative z-10"
                                   onClick={(e) => e.stopPropagation()}
                                 >
                                   <Mail className="h-7 w-7" />
