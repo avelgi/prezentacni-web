@@ -7,8 +7,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Code, Server, Wrench, Mail } from "lucide-react"
 
-// SEO is handled by sitemap.ts, robots.ts, and root layout metadata
-
 const serviceCategories = [
   {
     value: "item-1",
@@ -75,7 +73,7 @@ const serviceCategories = [
   },
 ]
 
-export default function NaseSluzby() {
+export function NaseSluzbyClient() {
   const router = useRouter()
   const [isTransitioning, setIsTransitioning] = useState(false)
 
@@ -112,7 +110,7 @@ export default function NaseSluzby() {
             </div>
 
             <div className="space-y-4 sm:space-y-8">
-              <h1 className="text-white font-semibold text-2xl md:text-3xl lg:text-4xl tracking-wide">Naše služby</h1>
+              <h3 className="text-white font-semibold text-2xl md:text-3xl lg:text-4xl tracking-wide">Naše služby</h3>
               <p className="text-white/70 text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl font-normal">
                 Prozkoumejte naši nabídku a&nbsp;objevte, jak můžeme posunout váš byznys na další úroveň.
               </p>

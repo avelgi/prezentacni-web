@@ -4,9 +4,7 @@ import type React from "react"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 
-// SEO is handled by sitemap.ts, robots.ts, and root layout metadata
-
-export default function Kontakt() {
+export default function KontaktClient() {
   const router = useRouter()
   const [isMobile, setIsMobile] = useState(false)
   const [isTransitioning, setIsTransitioning] = useState(false)
@@ -98,7 +96,7 @@ export default function Kontakt() {
 
             {/* Heading */}
             <div className="space-y-4 sm:space-y-8">
-              <h1 className="text-white font-semibold text-2xl md:text-3xl lg:text-4xl tracking-wide">Kontakt</h1>
+              <h3 className="text-white font-semibold text-2xl md:text-3xl lg:text-4xl tracking-wide">Kontakt</h3>
 
               <p className="text-white text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl font-normal text-stagger">
                 <span className="text-word">Právě</span> <span className="text-word">teď</span>{" "}

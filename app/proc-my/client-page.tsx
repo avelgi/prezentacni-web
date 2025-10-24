@@ -4,8 +4,6 @@ import type React from "react"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 
-// SEO is handled by sitemap.ts, robots.ts, and root layout metadata
-
 export default function KdoJsem() {
   const router = useRouter()
   const [isMobile, setIsMobile] = useState(false)
@@ -70,7 +68,7 @@ export default function KdoJsem() {
 
             {/* Heading */}
             <div className="space-y-4 sm:space-y-8">
-              <h1 className="text-white font-semibold text-2xl md:text-3xl lg:text-4xl tracking-wide">Proč my?</h1>
+              <h3 className="text-white font-semibold text-2xl md:text-3xl lg:text-4xl tracking-wide">Proč my?</h3>
 
               <p className="text-white text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl font-normal text-stagger">
                 <span className="text-word">Díky</span> <span className="text-word">nám</span>{" "}
